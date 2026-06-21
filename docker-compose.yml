@@ -1,0 +1,11 @@
+services:
+  spacecraft-planner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sc_planner_dashboard
+    ports:
+      - "8080:3000"
+    restart: unless-stopped
+    environment:
+      - TZ=America/New_York
