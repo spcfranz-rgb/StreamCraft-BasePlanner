@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  spacecraft-planner:
+    image: 192.168.1.153:5000/spacecraft-planner:latest
+    container_name: sc_planner_dashboard
+    ports:
+      - "8080:3000"
+    restart: unless-stopped
+    environment:
+      # Remember to use double dollar signs ($$) if adding auth variables later 
+      # to prevent interpolation issues in Komodo or PowerShell.
+      - TZ=America/New_York
